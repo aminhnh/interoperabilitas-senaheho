@@ -1,7 +1,7 @@
 ## Steps to run project
 
-Clone the project, then run:
-```composer install```
-```php artisan migrate```
-```php artisan db:seed```
-```php artisan serve```
+Clone the project, then run:<br>
+```composer install```<br>
+```php artisan migrate```<br>
+```php artisan db:seed```<br>
+```php artisan serve```<br>
