@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,11 +13,18 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        $sqlFilePath = __DIR__ . '/wilayah_indonesia.sql';
+        $sqlFilePathVillages = __DIR__ . '/wilayah_indonesia_insert_villages.sql';
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        if (file_exists($sqlFilePath)) {
+            DB::unprepared(
+                file_get_contents($sqlFilePath)
+            );
+            DB::unprepared(
+                file_get_contents($sqlFilePathVillages)
+            );
+        } else {
+            $this->command->error("SQL file not found at path: " . $sqlFilePath);
+        }
     }
 }
