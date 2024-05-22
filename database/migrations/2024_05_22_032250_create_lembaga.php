@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('reg_lembaga', function (Blueprint $table) {
+        Schema::create('lembaga', function (Blueprint $table) {
             $table->char('id',4)->primary();
             $table->char('id_role', 4)->index('fk_role')->nullable(false);
             $table->char('id_kelurahan', 4)->index('fk_kelurahan')->nullable(false);

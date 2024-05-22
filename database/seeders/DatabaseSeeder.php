@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $sqlFilePath = __DIR__ . '/wilayah_indonesia.sql';
-        $sqlFilePathVillages = __DIR__ . '/wilayah_indonesia_insert_villages.sql';
+        $sqlFilePathVillages = __DIR__ . '/wilayah_indonesia_insert_kelurahan.sql';
 
         if (file_exists($sqlFilePath)) {
             DB::unprepared(

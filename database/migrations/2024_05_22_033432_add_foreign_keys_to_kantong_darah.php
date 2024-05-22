@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('kantong_darah', function (Blueprint $table) {
             $table->foreign(['id_golongan_darah'], 'fk_golongan_darah')->references(['id'])->on('golongan_darah')->onUpdate('restrict')->onDelete('restrict');
-            $table->foreign(['id_lembaga'], 'fk_lembaga')->references(['id'])->on('reg_lembaga')->onUpdate('restrict')->onDelete('restrict');
+            $table->foreign(['id_lembaga'], 'fk_lembaga')->references(['id'])->on('lembaga')->onUpdate('restrict')->onDelete('restrict');
         });
     }
 

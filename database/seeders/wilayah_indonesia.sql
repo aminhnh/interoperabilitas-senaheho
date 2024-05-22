@@ -1,4 +1,4 @@
-INSERT INTO `reg_provinces` VALUES
+INSERT INTO `provinsi` VALUES
 ('11', 'ACEH'),
 ('12', 'SUMATERA UTARA'),
 ('13', 'SUMATERA BARAT'),
@@ -37,7 +37,7 @@ INSERT INTO `reg_provinces` VALUES
 ('94', 'PAPUA TENGAH'),
 ('95', 'PAPUA PEGUNUNGAN');
 
-INSERT INTO `reg_regencies` VALUES
+INSERT INTO `kota` VALUES
 ('1101', '11', 'KAB. ACEH SELATAN'),
 ('1102', '11', 'KAB. ACEH TENGGARA'),
 ('1103', '11', 'KAB. ACEH TIMUR'),
@@ -553,7 +553,7 @@ INSERT INTO `reg_regencies` VALUES
 ('9507', '95', 'KAB. LANNY JAYA'),
 ('9508', '95', 'KAB. NDUGA');
 
-INSERT INTO `reg_districts` VALUES
+INSERT INTO `kecamatan` VALUES
 ('110101', '1101', 'Bakongan'),
 ('110102', '1101', 'Kluet Utara'),
 ('110103', '1101', 'Kluet Selatan'),

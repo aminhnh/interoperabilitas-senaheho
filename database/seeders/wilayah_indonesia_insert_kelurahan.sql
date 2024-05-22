@@ -1,4 +1,4 @@
-INSERT INTO `reg_villages` VALUES
+INSERT INTO `kelurahan` VALUES
 ('1101012001', '110101', 'Keude Bakongan'),
 ('1101012002', '110101', 'Ujong Mangki'),
 ('1101012003', '110101', 'Ujong Padang'),
@@ -7951,7 +7951,7 @@ INSERT INTO `reg_villages` VALUES
 ('1207022006', '120702', 'Aek Pancur'),
 ('1207022007', '120702', 'Sei Merah'),
 ('1207022008', '120702', 'Naga Timbul');
-INSERT INTO `reg_villages` VALUES
+INSERT INTO `kelurahan` VALUES
 ('1207022009', '120702', 'Lengau Seprang'),
 ('1207022010', '120702', 'Tanjung Mulia'),
 ('1207022011', '120702', 'Punden Rejo'),
@@ -19705,7 +19705,7 @@ INSERT INTO `reg_villages` VALUES
 ('1609132007', '160913', 'Gunung Raya'),
 ('1609132008', '160913', 'Remanam Jaya'),
 ('1609132009', '160913', 'Kiwis Raya');
-INSERT INTO `reg_villages` VALUES
+INSERT INTO `kelurahan` VALUES
 ('1609132010', '160913', 'Segigok Raya'),
 ('1609132011', '160913', 'Bumi Agung'),
 ('1609132012', '160913', 'Mekar Sari'),
@@ -30743,7 +30743,7 @@ INSERT INTO `reg_villages` VALUES
 ('3215212001', '321521', 'Majalaya'),
 ('3215212002', '321521', 'Ciranggon'),
 ('3215212003', '321521', 'Pasirjengkol');
-INSERT INTO `reg_villages` VALUES
+INSERT INTO `kelurahan` VALUES
 ('3215212005', '321521', 'Sarijaya'),
 ('3215212006', '321521', 'Pasirmulya'),
 ('3215212007', '321521', 'Lemahmulya'),
@@ -42872,7 +42872,7 @@ INSERT INTO `reg_villages` VALUES
 ('3508212002', '350821', 'Kebonsari'),
 ('3508212003', '350821', 'Grati'),
 ('3508212004', '350821', 'Labruk Kidul');
-INSERT INTO `reg_villages` VALUES
+INSERT INTO `kelurahan` VALUES
 ('3508212005', '350821', 'Mojosari'),
 ('3508212006', '350821', 'Sentul'),
 ('3508212007', '350821', 'Purwosono'),
@@ -53056,7 +53056,7 @@ INSERT INTO `reg_villages` VALUES
 ('5302172002', '530217', 'Sahan'),
 ('5302172003', '530217', 'Nenoat'),
 ('5302172004', '530217', 'Haineno');
-INSERT INTO `reg_villages` VALUES
+INSERT INTO `kelurahan` VALUES
 ('5302172005', '530217', 'Nunkolo'),
 ('5302172006', '530217', 'Saenam'),
 ('5302172007', '530217', 'Fat'),
@@ -64273,7 +64273,7 @@ INSERT INTO `reg_villages` VALUES
 ('7105101006', '710510', 'Uwuran I'),
 ('7105101007', '710510', 'Uwuran II'),
 ('7105101008', '710510', 'Lewet');
-INSERT INTO `reg_villages` VALUES
+INSERT INTO `kelurahan` VALUES
 ('7105101010', '710510', 'Bitung'),
 ('7105102009', '710510', 'Ranoketang Tua'),
 ('7105102018', '710510', 'Kilometer 3'),
@@ -75848,7 +75848,7 @@ INSERT INTO `reg_villages` VALUES
 ('8204232004', '820423', 'Jibubu'),
 ('8204232005', '820423', 'Pasipalele'),
 ('8204232006', '820423', 'Sekely');
-INSERT INTO `reg_villages` VALUES
+INSERT INTO `kelurahan` VALUES
 ('8204232007', '820423', 'Tawa'),
 ('8204232008', '820423', 'Yamli'),
 ('8204242001', '820424', 'Batulak'),

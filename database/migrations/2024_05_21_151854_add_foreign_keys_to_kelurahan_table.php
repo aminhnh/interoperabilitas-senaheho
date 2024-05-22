@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('reg_provinces', function (Blueprint $table) {
-            $table->char('id', 2)->primary();
-            $table->string('name');
+        Schema::table('kelurahan', function (Blueprint $table) {
+            $table->foreign(['id_kecamatan'], 'fk_kecamatan')->references(['id'])->on('kecamatan')->onUpdate('restrict')->onDelete('restrict');
         });
     }
 
@@ -22,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('reg_provinces');
+        Schema::table('kelurahan', function (Blueprint $table) {
+            $table->dropForeign('fk_kecamatan');
+        });
     }
 };

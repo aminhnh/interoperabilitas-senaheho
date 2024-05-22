@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('reg_regencies', function (Blueprint $table) {
-            $table->char('id', 4)->primary();
-            $table->char('province_id', 2)->index('fk_province');
-            $table->string('name');
+        Schema::create('kecamatan', function (Blueprint $table) {
+            $table->char('id', 6)->primary();
+            $table->char('id_kota', 4)->index('fk_kota');
+            $table->string('nama');
         });
     }
 
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('reg_regencies');
+        Schema::dropIfExists('kecamatan');
     }
 };

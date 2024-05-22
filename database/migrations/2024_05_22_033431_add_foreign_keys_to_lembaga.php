@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('reg_lembaga', function (Blueprint $table) {
+        Schema::table('lembaga', function (Blueprint $table) {
             $table->foreign(['id_role'], 'fk_role')->references(['id'])->on('role')->onUpdate('restrict')->onDelete('restrict');
-            $table->foreign(['id_kelurahan'], 'fk_kelurahan')->references(['id'])->on('reg_district')->onUpdate('restrict')->onDelete('restrict');
+            $table->foreign(['id_kelurahan'], 'fk_kelurahan')->references(['id'])->on('kelurahan')->onUpdate('restrict')->onDelete('restrict');
         });
     }
 
@@ -22,8 +22,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('reg_lembaga', function (Blueprint $table) {
-            //
+        Schema::table('lembaga', function (Blueprint $table) {
+            $table->dropForeign('fk_role');
+            $table->dropForeign('fk_kelurahan');
         });
     }
 };

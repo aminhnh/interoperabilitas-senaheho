@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('reg_districts', function (Blueprint $table) {
-            $table->char('id', 6)->primary();
-            $table->char('regency_id', 4)->index('fk_regency');
-            $table->string('name');
+        Schema::create('kelurahan', function (Blueprint $table) {
+            $table->char('id', 10)->primary();
+            $table->char('id_kecamatan', 6)->index('fk_kecamatan');
+            $table->string('nama');
         });
     }
 
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('reg_districts');
+        Schema::dropIfExists('kelurahan');
     }
 };

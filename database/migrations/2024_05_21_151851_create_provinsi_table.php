@@ -11,8 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('reg_villages', function (Blueprint $table) {
-            $table->foreign(['district_id'], 'fk_district')->references(['id'])->on('reg_districts')->onUpdate('restrict')->onDelete('restrict');
+        Schema::create('provinsi', function (Blueprint $table) {
+            $table->char('id', 2)->primary();
+            $table->string('nama');
         });
     }
 
@@ -21,8 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('reg_villages', function (Blueprint $table) {
-            $table->dropForeign('fk_district');
-        });
+        Schema::dropIfExists('provinsi');
     }
 };
