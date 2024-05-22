@@ -12,7 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('kantong_darah', function (Blueprint $table) {
-            $table->id();
+            $table->char('id',4)->primary();
+            $table->char('id_golongan_darah', 4)->index('fk_golongan_darah');
+            $table->char('id_lembaga', 4)->index('fk_lembaga');
+            $table->date('tanggal_donor')->nullable(false);
+            $table->date('tanggal_kadaluarsa')->nullable(false);
+            $table->integer('jumlah');
             $table->timestamps();
         });
     }
