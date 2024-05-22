@@ -21,9 +21,9 @@ class Lembaga extends Model
         'no_telepon',
     ];
     public function role() {
-        return $this->hasOne(Role::class, 'id_role');
+        return $this->hasOne(Role::class, 'id', 'id_role');
     }
     public function kelurahan() {
-        return $this->hasOne(Kelurahan::class, 'id_kelurahan');
+        return $this->hasOne(Kelurahan::class, 'id', 'id_kelurahan');
     }
 }
