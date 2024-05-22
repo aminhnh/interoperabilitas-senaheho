@@ -15,10 +15,7 @@ class KantongDarahResource extends JsonResource
             'jumlah' => $this->jumlah,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
-            'golongan_darah' => [
-                'jenis_golongan' => $this->golonganDarah->golongan_darah,
-                'rhesus' => $this->golonganDarah->rhesus,
-            ],
+            'golongan_darah' => new GolonganDarahResource($this->golonganDarah),
             'lembaga' => new LembagaResource($this->lembaga),
         ];
     }
