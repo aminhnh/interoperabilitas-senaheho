@@ -18,4 +18,10 @@ class KantongDarah extends Model
         'tanggal_kadaluarsa',
         'jumlah',
     ];
+    public function golongan_darah() {
+        return $this->hasOne(GolonganDarah::class, 'id', 'id_golongan_darah');
+    }
+    public function lembaga() {
+        return $this->hasOne(Lembaga::class, 'id', 'id_lembaga');
+    }
 }

@@ -1,9 +1,8 @@
 <?php
 
+namespace App\Models;
+
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
 
 class Lembaga extends Model
 {
@@ -21,4 +20,10 @@ class Lembaga extends Model
         'kode_pos',
         'no_telepon',
     ];
+    public function role() {
+        return $this->hasOne(Role::class, 'id_role');
+    }
+    public function kelurahan() {
+        return $this->hasOne(Kelurahan::class, 'id_kelurahan');
+    }
 }

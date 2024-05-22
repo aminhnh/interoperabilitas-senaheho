@@ -26,5 +26,14 @@ class DatabaseSeeder extends Seeder
         } else {
             $this->command->error("SQL file not found at path: " . $sqlFilePath);
         }
+        
+        $this->call (
+            [
+                RoleSeeder::class,
+                LembagaSeeder::class,
+                GolonganDarahSeeder::class,
+                KantongDarahSeeder::class,
+            ]
+            );
     }
 }
