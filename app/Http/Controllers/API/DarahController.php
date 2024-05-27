@@ -67,7 +67,7 @@ class DarahController extends Controller
                     'jenis_golongan' => $item->golongan_darah->golongan_darah,
                     'rhesus' => $item->golongan_darah->rhesus,
                 ],
-                'lembaga' => [
+                'lembaga' => [  
                     'id' => $item->lembaga->id,
                     'jenis' => $item->lembaga->jenis,
                     'nama' => $item->lembaga->nama,

@@ -13,7 +13,9 @@ class LembagaController extends Controller
      */
     public function index()
     {
-        $listLembaga = Lembaga::all()->load(['kelurahan', 'role']);
+        $query = request()->query();
+
+        $listLembaga = Lembaga::filterByQuery($query)->get()->load('role', 'kelurahan');
         return response()->json([
             'status' => '200 OK',
             'message' => 'Berhasil menampilkan data lembaga.',
