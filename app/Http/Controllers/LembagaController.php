@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LembagaStoreRequest;
+use App\Http\Requests\LembagaUpdateRequest;
 use App\Http\Resources\LembagaResource;
 use App\Models\Lembaga;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class LembagaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $query = request()->query();
@@ -23,51 +23,64 @@ class LembagaController extends Controller
         ], 200);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function store(LembagaStoreRequest $request)
     {
-        //
+        $validated = $request->validated();
+
+        $lembaga = Lembaga::create($validated);
+
+        return response()->json([
+            'status' => '201 Created',
+            'message' => 'Berhasil menambah data lembaga.',
+            'data' => new LembagaResource($lembaga->load('role', 'kelurahan.kecamatan.kota.provinsi')),
+        ], 201);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
     {
-        //
+        $lembaga = Lembaga::find($id);
+        if (is_null($lembaga)) {
+            return response()->json([
+                'status' => '404 Not Found',
+                'message' => 'Data lembaga tidak ditemukan.',
+            ], 404);
+        }
+
+        return response()->json([
+            'status' => '200 OK',
+            'message' => 'Berhasil menampilkan data lembaga.',
+            'data' => new LembagaResource($lembaga->load('role', 'kelurahan.kecamatan.kota.provinsi')),
+        ], 200);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    public function update(LembagaUpdateRequest $request, Lembaga $lembaga)
     {
-        //
+        $validated = $request->validated();
+
+        $lembaga->update([
+            'id_role' => $validated['id_role'] ?? $lembaga->id_role,
+            'id_kelurahan' => $validated['id_kelurahan'] ?? $lembaga->id_kelurahan,
+            'jenis' => $validated['jenis'] ?? $lembaga->jenis,
+            'nama' => $validated['nama'] ?? $lembaga->nama,
+            'alamat' => $validated['alamat'] ?? $lembaga->alamat,
+            'kode_pos' => $validated['kode_pos'] ?? $lembaga->kode_pos,
+            'no_telepon' => $validated['no_telepon'] ?? $lembaga->no_telepon,
+        ]);
+
+        return response()->json([
+            'status' => '201 Created',
+            'message' => 'Berhasil memperbarui data lembaga.',
+            'data' => new LembagaResource($lembaga->load('role', 'kelurahan.kecamatan.kota.provinsi')),
+        ], 200);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    public function destroy(Lembaga $lembaga)
     {
-        //
-    }
+        $lembaga->delete();
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        return response()->json([
+            'status' => '200 OK',
+            'message' => 'Berhasil menghapus data lembaga.',
+        ], 200);
     }
 }
