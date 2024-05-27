@@ -25,4 +25,4 @@ Route::resource('darah', DarahController::class);
 
 Route::resource('lembaga', LembagaController::class);
 
-Route::get('home', [ViewController::class, 'index']);
+

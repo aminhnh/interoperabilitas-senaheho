@@ -14,7 +14,6 @@ class ViewController extends Controller
     public function index()
     {
         $client = new Client();
-
         $url = "http://127.0.0.1:8000/api/darah";
         $response = $client->request('GET', $url);
         $content = $response->getBody()->getContents();
