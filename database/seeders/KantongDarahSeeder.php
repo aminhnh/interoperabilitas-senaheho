@@ -13,10 +13,10 @@ class KantongDarahSeeder extends Seeder
 
         for ($i = 0; $i < 10; $i++) {
             KantongDarah::create([
-                'id_golongan_darah' => 1,
-                'id_lembaga' => 2,
-                'tanggal_donor' => $faker->date(),
-                'tanggal_kadaluarsa' => $faker->date(),
+                'id_golongan_darah' => $faker->numberBetween(1, 3),
+                'id_lembaga' => $faker->numberBetween(1, 5),
+                'tanggal_donor' => $faker->dateTimeBetween('-1 year', 'now')->format('Y-m-d'),
+                'tanggal_kadaluarsa' => $faker->dateTimeBetween('now', '+1 year')->format('Y-m-d'),
                 'jumlah' => $faker->numberBetween(1, 10),
             ]);
         }

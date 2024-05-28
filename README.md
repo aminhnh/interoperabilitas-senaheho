@@ -8,8 +8,8 @@
 3. Install composer packages <br>
 ```composer install```<br>
 
-4. Run the migrations<br>
-```php artisan migrate```<br>
+4. Make 'interoperabilitas' database and run the migrations<br>
+```php artisan migrate:fresh```<br>
 
 5. Before seeding, run the sql command below in phpmyadmin: <br>
 ```

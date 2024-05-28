@@ -9,13 +9,11 @@ class RoleSeeder extends Seeder
     public function run()
     {
         Role::create([
-            'nama' => 'Role Name 1',
+            'nama' => 'user',
         ]);
 
         Role::create([
-            'nama' => 'Role Name 2',
+            'nama' => 'admin',
         ]);
-
-        // Add more dummy data as needed
     }
 }

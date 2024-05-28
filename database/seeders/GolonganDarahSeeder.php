@@ -9,15 +9,18 @@ class GolonganDarahSeeder extends Seeder
     public function run()
     {
         GolonganDarah::create([
-            'golongan_darah' => 'A+',
+            'golongan_darah' => 'A',
             'rhesus' => '+',
         ]);
 
         GolonganDarah::create([
-            'golongan_darah' => 'B-',
+            'golongan_darah' => 'B',
             'rhesus' => '-',
         ]);
 
-        // Add more dummy data as needed
+        GolonganDarah::create([
+            'golongan_darah' => 'B',
+            'rhesus' => '+',
+        ]);
     }
 }
