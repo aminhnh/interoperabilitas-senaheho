@@ -35,7 +35,7 @@
 <body>
     <nav class="navbar navbar-light fixed-top d-flex space-between bg-red"  style="background-color: #8B0000;" >
         <button class="btn" id="sidebarToggle">
-        <img width="30px" src="{{ asset('assets/Menu.svg') }}">
+        <img width="20rem" src="{{ asset('assets/Menu.svg') }}">
         </button>
         <a class="navbar-brand d-flex flex-row align-items-center gap-2 " href="#">
         <div class="d-flex flex-row align-items-center mx-3" >
