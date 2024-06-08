@@ -80,7 +80,7 @@ class DarahController extends Controller
 
         return response()->json([
             'status' => '200 OK',
-            'message' => 'Berhasil menghapus data lembaga.',
+            'message' => 'Berhasil menghapus data darah.',
         ], 200);
     }
 }

@@ -1,8 +1,9 @@
 <?php
 
 use App\Http\Controllers\API\DarahController;
-use App\Http\Controllers\LembagaController;
-use App\Http\Controllers\ViewController;
+use App\Http\Controllers\API\LembagaController;
+use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\ViewController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,12 +18,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::post('auth', [AuthController::class, 'login']);
+
+Route::group(['middleware' => 'auth:sanctum'], function () {
+    Route::post('logout', [AuthController::class, 'logout']);
+    Route::resource('darah', DarahController::class);
+    Route::resource('lembaga', LembagaController::class);
 });
-
-Route::resource('darah', DarahController::class);
-
-Route::resource('lembaga', LembagaController::class);
-
-

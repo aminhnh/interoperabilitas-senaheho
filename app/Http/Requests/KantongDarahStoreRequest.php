@@ -22,11 +22,11 @@ class KantongDarahStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'id_golongan_darah' => 'nullable|exists:golongan_darah,id',
-            'id_lembaga' => 'nullable|exists:lembaga,id',
-            'tanggal_donor' => 'nullable|date',
-            'tanggal_kadaluarsa' => 'nullable|date|after_or_equal:tanggal_donor',
-            'jumlah' => 'nullable|integer|min:1',
+            'id_golongan_darah' => 'required|exists:golongan_darah,id',
+            'id_lembaga' => 'required|exists:lembaga,id',
+            'tanggal_donor' => 'required|date',
+            'tanggal_kadaluarsa' => 'required|date|after_or_equal:tanggal_donor',
+            'jumlah' => 'required|integer|min:1',
         ];
     }
     public function messages()

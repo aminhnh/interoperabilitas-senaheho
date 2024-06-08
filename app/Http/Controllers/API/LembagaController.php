@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\LembagaStoreRequest;
 use App\Http\Requests\LembagaUpdateRequest;
 use App\Http\Resources\LembagaResource;
