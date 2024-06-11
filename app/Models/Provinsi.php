@@ -15,6 +15,38 @@ class Provinsi extends Model
         'id',
         'nama',
     ];
+        /**
+     * Scope a query to only include provinsi that match the given filters.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $q
+     * @param array $filters
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeFilterByQuery($q, array $filters)
+    {
+        if (isset($filters['id'])) {
+            $q->where('id', $filters['id']);
+        }
+        if (isset($filters['nama'])) {
+            $q->where('nama', 'like', '%' . $filters['nama'] . '%');
+        }
+        if (isset($filters['id_kota'])) {
+            $q->whereHas('kota', function ($query) use ($filters) {
+                $query->where('id', $filters['id_kota']);
+            });
+        }
+        if (isset($filters['id_kecamatan'])) {
+            $q->whereHas('kota.kecamatan', function ($query) use ($filters) {
+                $query->where('id', $filters['id_kecamatan']);
+            });
+        }
+        if (isset($filters['id_kelurahan'])) {
+            $q->whereHas('kota.kecamatan.kelurahan', function ($query) use ($filters) {
+                $query->where('id', $filters['id_kelurahan']);
+            });
+        }
+        return $q;
+    }
 
     public function kotas()
     {
