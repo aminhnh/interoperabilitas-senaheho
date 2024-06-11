@@ -16,7 +16,19 @@ class Kecamatan extends Model
         'id_kota',
         'nama',
     ];
-
+    public function scopeFilterByQuery($q, array $filters)
+    {
+        if (isset($filters['id'])) {
+            $q->where('id', $filters['id']);
+        }
+        if (isset($filters['nama'])) {
+            $q->where('nama', 'like', '%' . $filters['nama'] . '%');
+        }
+        if (isset($filters['id_kota'])) {
+            $q->where('id_kota', $filters['id_kota']);
+        }
+        return $q;
+    }
     public function kota()
     {
         return $this->belongsTo(Kota::class, 'id_kota', 'id');

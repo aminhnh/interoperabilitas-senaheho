@@ -3,6 +3,9 @@
 use App\Http\Controllers\API\DarahController;
 use App\Http\Controllers\API\LembagaController;
 use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\KecamatanController;
+use App\Http\Controllers\API\KelurahanController;
+use App\Http\Controllers\API\KotaController;
 use App\Http\Controllers\API\ProvinsiController;
 use App\Http\Controllers\API\ViewController;
 use Illuminate\Http\Request;
@@ -26,4 +29,7 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::resource('darah', DarahController::class);
     Route::resource('lembaga', LembagaController::class);
     Route::get('provinsi', [ProvinsiController::class, 'index']);
+    Route::get('kota', [KotaController::class, 'index']);
+    Route::get('kelurahan', [KelurahanController::class, 'index']);
+    Route::get('kecamatan', [KecamatanController::class, 'index']);
 });
