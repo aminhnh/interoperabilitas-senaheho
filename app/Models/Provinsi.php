@@ -31,17 +31,17 @@ class Provinsi extends Model
             $q->where('nama', 'like', '%' . $filters['nama'] . '%');
         }
         if (isset($filters['id_kota'])) {
-            $q->whereHas('kota', function ($query) use ($filters) {
+            $q->whereHas('kotas', function ($query) use ($filters) {
                 $query->where('id', $filters['id_kota']);
             });
         }
         if (isset($filters['id_kecamatan'])) {
-            $q->whereHas('kota.kecamatan', function ($query) use ($filters) {
+            $q->whereHas('kotas.kecamatans', function ($query) use ($filters) {
                 $query->where('id', $filters['id_kecamatan']);
             });
         }
         if (isset($filters['id_kelurahan'])) {
-            $q->whereHas('kota.kecamatan.kelurahan', function ($query) use ($filters) {
+            $q->whereHas('kotas.kecamatans.kelurahans', function ($query) use ($filters) {
                 $query->where('id', $filters['id_kelurahan']);
             });
         }
